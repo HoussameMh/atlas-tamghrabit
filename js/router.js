@@ -10,6 +10,7 @@ const Router = {
         monument: () => MonumentScreen,
         map: () => MapScreen,
         favorites: () => FavoritesScreen,
+        quiz: () => QuizScreen,
     },
 
     current: null,
@@ -24,6 +25,7 @@ const Router = {
         monument: 'cities',  // monument detail → highlight Villes
         map: 'map',
         favorites: 'favorites',
+        quiz: 'quiz',
     },
 
     navigate(screenName, param = null) {

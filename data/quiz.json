@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "ville": "marrakech",
+    "difficulte": "facile",
+    "question": "Quel est le surnom de Marrakech ?",
+    "options": [
+      "La Ville Bleue",
+      "La Ville Ocre",
+      "La Ville Verte",
+      "La Ville Blanche"
+    ],
+    "reponse": 1,
+    "explication": "Marrakech est surnommée La Ville Ocre en raison de la couleur terracotta de ses bâtiments construits en pisé rouge."
+  },
+  {
+    "id": 2,
+    "ville": "fes",
+    "difficulte": "facile",
+    "question": "Quelle est la plus ancienne université du monde encore en activité, fondée à Fès ?",
+    "options": [
+      "Université Al-Azhar",
+      "Université de Bologne",
+      "Université Al-Qarawiyyin",
+      "Université de Paris"
+    ],
+    "reponse": 2,
+    "explication": "L'Université Al-Qarawiyyin, fondée en 859 à Fès, est reconnue par l'UNESCO et le Livre Guinness des Records comme la plus ancienne université du monde encore en activité."
+  },
+  {
+    "id": 3,
+    "ville": "chefchaouen",
+    "difficulte": "facile",
+    "question": "Pourquoi les murs de Chefchaouen sont-ils peints en bleu ?",
+    "options": [
+      "Pour repousser les moustiques",
+      "Par décision du gouvernement",
+      "Héritage des juifs séfarades refugiés",
+      "Pour attirer les touristes"
+    ],
+    "reponse": 2,
+    "explication": "Le bleu fut introduit par les réfugiés juifs séfarades au XVe siècle. Pour eux, le bleu symbolisait le ciel et rappelait la présence divine."
+  },
+  {
+    "id": 4,
+    "ville": "essaouira",
+    "difficulte": "moyen",
+    "question": "Quel ancien nom portait Essaouira ?",
+    "options": [
+      "Tingis",
+      "Mogador",
+      "Rusadir",
+      "Volubilis"
+    ],
+    "reponse": 1,
+    "explication": "Essaouira s'appelait Mogador, nom d'origine berbère. Elle fut un port commercial majeur de l'empire chérifien et centre du commerce avec l'Europe."
+  },
+  {
+    "id": 5,
+    "ville": "meknes",
+    "difficulte": "moyen",
+    "question": "Quel sultan a fait construire la ville impériale de Meknès ?",
+    "options": [
+      "Mohammed V",
+      "Hassan II",
+      "Moulay Ismaïl",
+      "Moulay Ali Chérif"
+    ],
+    "reponse": 2,
+    "explication": "Moulay Ismaïl (1672-1727) fit de Meknès sa capitale impériale. Il employa 50 000 ouvriers pour construire palais, remparts et écuries royales en moins de 25 ans."
+  },
+  {
+    "id": 6,
+    "ville": "marrakech",
+    "difficulte": "moyen",
+    "question": "Qu'est-ce que la Tanjia ?",
+    "options": [
+      "Une danse traditionnelle",
+      "Un plat cuit sous les cendres du hammam",
+      "Un instrument de musique",
+      "Un tissu artisanal"
+    ],
+    "reponse": 1,
+    "explication": "La Tanjia est un plat emblématique des artisans de Marrakech. La viande est cuite pendant des heures dans un pot en terre sous les cendres du four du hammam."
+  },
+  {
+    "id": 7,
+    "ville": "fes",
+    "difficulte": "moyen",
+    "question": "Comment s'appelle la porte emblématique bleue et verte de Fès ?",
+    "options": [
+      "Bab Mansour",
+      "Bab Agnaou",
+      "Bab Boujeloud",
+      "Bab el-Khemis"
+    ],
+    "reponse": 2,
+    "explication": "Bab Boujeloud, surnommée la Porte Bleue, est l'entrée principale de Fès el-Bali. Construite en 1913, elle est ornée de zellige bleu côté médina et vert côté ville."
+  },
+  {
+    "id": 8,
+    "ville": "meknes",
+    "difficulte": "difficile",
+    "question": "Quel site antique classé UNESCO se trouve près de Meknès ?",
+    "options": [
+      "Lixus",
+      "Tingis",
+      "Volubilis",
+      "Sala Colonia"
+    ],
+    "reponse": 2,
+    "explication": "Volubilis, ancienne cité romaine et berbère, est située à 30km de Meknès. Inscrite au patrimoine mondial UNESCO en 1997, elle conserve des mosaïques exceptionnelles et un arc de triomphe de Caracalla."
+  },
+  {
+    "id": 9,
+    "ville": "tanger",
+    "difficulte": "difficile",
+    "question": "Quel célèbre peintre français fut inspiré par Tanger au XIXe siècle ?",
+    "options": [
+      "Claude Monet",
+      "Eugène Delacroix",
+      "Pablo Picasso",
+      "Henri Matisse"
+    ],
+    "reponse": 1,
+    "explication": "Eugène Delacroix visita Tanger en 1832 et fut fasciné par la lumière et les couleurs de la ville. Ce voyage transforma radicalement son style pictural et inspira des dizaines de tableaux orientalistes."
+  },
+  {
+    "id": 10,
+    "ville": "marrakech",
+    "difficulte": "difficile",
+    "question": "En quelle année la Médina de Marrakech a-t-elle été inscrite au patrimoine mondial de l'UNESCO ?",
+    "options": [
+      "1978",
+      "1985",
+      "1992",
+      "2001"
+    ],
+    "reponse": 1,
+    "explication": "La Médina de Marrakech fut inscrite au patrimoine mondial de l'UNESCO en 1985, reconnue pour sa valeur universelle exceptionnelle et son architecture andalouse-berbère."
+  },
+  {
+    "id": 11,
+    "ville": "rabat",
+    "difficulte": "facile",
+    "question": "Quelle est la capitale actuelle du Maroc ?",
+    "options": [
+      "Casablanca",
+      "Fès",
+      "Marrakech",
+      "Rabat"
+    ],
+    "reponse": 3,
+    "explication": "Rabat est la capitale administrative et politique du Maroc depuis la période du protectorat français en 1912. Elle a conservé ce statut après l'indépendance en 1956."
+  },
+  {
+    "id": 12,
+    "ville": "casablanca",
+    "difficulte": "facile",
+    "question": "Quelle célèbre mosquée abrite un des minarets les plus hauts du monde à Casablanca ?",
+    "options": [
+      "Mosquée Koutoubia",
+      "Mosquée Hassan II",
+      "Mosquée Al-Qarawiyyin",
+      "Grande Mosquée de Paris"
+    ],
+    "reponse": 1,
+    "explication": "La mosquée Hassan II, inaugurée en 1993, possède un minaret de 210 mètres. Elle est en partie construite sur l'océan Atlantique et peut accueillir jusqu'à 105 000 fidèles."
+  },
+  {
+    "id": 13,
+    "ville": "agadir",
+    "difficulte": "moyen",
+    "question": "En quelle année Agadir a-t-elle été entièrement détruite par un tremblement de terre ?",
+    "options": [
+      "1950",
+      "1960",
+      "1973",
+      "1985"
+    ],
+    "reponse": 1,
+    "explication": "Le séisme d'Agadir a eu lieu le 29 février 1960. Après la tragédie, la ville a été reconstruite à quelques kilomètres au sud de son emplacement d'origine sur ordre du roi Mohammed V."
+  },
+  {
+    "id": 14,
+    "ville": "tanger",
+    "difficulte": "moyen",
+    "question": "Quel statut particulier Tanger avait-elle entre 1923 et 1956 ?",
+    "options": [
+      "Zone internationale",
+      "Colonie britannique",
+      "Territoire espagnol",
+      "Capitale impériale"
+    ],
+    "reponse": 0,
+    "explication": "Tanger fut une zone internationale administrée par plusieurs pays européens. Ce statut en fit un hub commercial et culturel unique, attirant écrivains, artistes et diplomates du monde entier."
+  },
+  {
+    "id": 15,
+    "ville": "fes",
+    "difficulte": "difficile",
+    "question": "Quel est le nom du célèbre quartier des tanneurs de Fès ?",
+    "options": [
+      "Mellah",
+      "Chouara",
+      "Al-Andalus",
+      "Batha"
+    ],
+    "reponse": 1,
+    "explication": "La tannerie Chouara est l'une des plus anciennes du monde (XIe siècle). Le cuir y est toujours traité dans des cuves colorées selon des méthodes traditionnelles vieilles de plusieurs siècles."
+  }
+]
