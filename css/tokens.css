@@ -1,0 +1,107 @@
+/* ═══════════════════════════════
+   ATLAS TAMGHRABIT — Design Tokens
+   ═══════════════════════════════ */
+
+:root {
+  /* ── Brand Colors ── */
+  --color-bg: #FFFAF5;
+  --color-text-primary: #1A1208;
+  --color-text-secondary: #6B5744;
+  --color-text-muted: #A89080;
+  --color-border: rgba(107, 87, 68, 0.15);
+  --color-surface: #FFF5EC;
+  --color-gold: #C9A84C;
+  --color-gold-light: #E8C97A;
+
+  /* ── City Themes ── */
+  --city-marrakech: #E2725B;
+  --city-marrakech-light: rgba(226, 114, 91, 0.12);
+  --city-marrakech-rgb: 226, 114, 91;
+  --city-chefchaouen: #00B4D8;
+  --city-chefchaouen-light: rgba(0, 180, 216, 0.12);
+  --city-chefchaouen-rgb: 0, 180, 216;
+  --city-fes: #006B3E;
+  --city-fes-light: rgba(0, 107, 62, 0.12);
+  --city-fes-rgb: 0, 107, 62;
+  --city-essaouira: #005F73;
+  --city-essaouira-light: rgba(0, 95, 115, 0.12);
+  --city-essaouira-rgb: 0, 95, 115;
+  --city-meknes: #8B4513;
+  --city-meknes-light: rgba(139, 69, 19, 0.12);
+  --city-meknes-rgb: 139, 69, 19;
+  --city-tanger: #1E90FF;
+  --city-tanger-light: rgba(30, 144, 255, 0.12);
+  --city-tanger-rgb: 30, 144, 255;
+
+  /* ── Active city (injected dynamically) ── */
+  --city-active: var(--city-marrakech);
+  --city-active-light: var(--city-marrakech-light);
+  --city-active-rgb: var(--city-marrakech-rgb);
+
+  /* ── Typography ── */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-arabic: 'Noto Naskh Arabic', serif;
+  --font-body: 'Lato', 'Nunito', system-ui, sans-serif;
+
+  --text-xs: 0.75rem;
+  /* 12px */
+  --text-sm: 0.875rem;
+  /* 14px */
+  --text-base: 1rem;
+  /* 16px */
+  --text-lg: 1.125rem;
+  /* 18px */
+  --text-xl: 1.25rem;
+  /* 20px */
+  --text-2xl: 1.5rem;
+  /* 24px */
+  --text-3xl: 1.875rem;
+  /* 30px */
+  --text-4xl: 2.25rem;
+  /* 36px */
+  --text-5xl: 3rem;
+  /* 48px */
+
+  /* ── Spacing ── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ── Radius ── */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 2px 8px rgba(26, 18, 8, 0.08);
+  --shadow-md: 0 4px 20px rgba(26, 18, 8, 0.12);
+  --shadow-lg: 0 8px 40px rgba(26, 18, 8, 0.18);
+  --shadow-xl: 0 20px 60px rgba(26, 18, 8, 0.22);
+  --shadow-moorish: 0 8px 32px rgba(201, 168, 76, 0.18), 0 2px 8px rgba(26, 18, 8, 0.10);
+
+  /* ── Z-index ── */
+  --z-base: 1;
+  --z-overlay: 10;
+  --z-modal: 100;
+  --z-nav: 200;
+  --z-toast: 300;
+
+  /* ── Transitions ── */
+  --t-fast: 150ms ease;
+  --t-base: 300ms ease-in-out;
+  --t-slow: 500ms ease-in-out;
+  --t-spring: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Layout ── */
+  --nav-height: 72px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}

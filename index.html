@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#FFFAF5" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Atlas Tamghrabit" />
+  <meta name="description"
+    content="Découvrez le patrimoine culturel marocain — mosquées, palais, artisanat et histoire vivante." />
+  <title>Atlas Tamghrabit — Patrimoine Marocain</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- App Styles -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- App Styles -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/screens.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+
+<body>
+  <!-- App Shell -->
+  <div id="app">
+    <!-- Router outlet -->
+    <div id="screen-container"></div>
+    <!-- Bottom Nav (hidden on splash) -->
+    <nav id="bottom-nav" class="bottom-nav hidden" role="navigation" aria-label="Navigation principale">
+      <button class="nav-tab active" data-tab="home" onclick="App.navigate('home')" aria-label="Accueil">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+          <polyline points="9,22 9,12 15,12 15,22" />
+        </svg>
+        <span>Accueil</span>
+      </button>
+      <button class="nav-tab" data-tab="cities" onclick="App.navigate('cities')" aria-label="Villes">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="10" r="4" />
+          <path d="M12 2C8 2 4 5.5 4 10c0 6 8 13 8 13s8-7 8-13c0-4.5-4-8-8-8z" />
+        </svg>
+        <span>Villes</span>
+      </button>
+      <button class="nav-tab" data-tab="map" onclick="App.navigate('map')" aria-label="Carte">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2" />
+          <line x1="8" y1="2" x2="8" y2="18" />
+          <line x1="16" y1="6" x2="16" y2="22" />
+        </svg>
+        <span>Carte</span>
+      </button>
+      <button class="nav-tab" data-tab="favorites" onclick="App.navigate('favorites')" aria-label="Favoris">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path
+            d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+        </svg>
+        <span>Favoris</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Templates -->
+  <!-- Zellige SVG Pattern (reusable defs) -->
+  <svg style="display:none" id="svg-defs">
+    <defs>
+      <pattern id="zellige-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+        <rect width="60" height="60" fill="none" />
+        <path d="M30 0L60 15L60 45L30 60L0 45L0 15Z" fill="none" stroke="rgba(226,114,91,0.15)" stroke-width="1" />
+        <path d="M30 10L50 20L50 40L30 50L10 40L10 20Z" fill="none" stroke="rgba(226,114,91,0.10)" stroke-width="0.5" />
+        <circle cx="30" cy="30" r="3" fill="rgba(226,114,91,0.12)" />
+      </pattern>
+      <pattern id="arabesque-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M20,0 C28,8 28,12 20,20 C12,12 12,8 20,0Z" fill="none" stroke="rgba(107,87,68,0.12)"
+          stroke-width="0.8" />
+        <path d="M0,20 C8,28 12,28 20,20 C12,12 8,12 0,20Z" fill="none" stroke="rgba(107,87,68,0.12)"
+          stroke-width="0.8" />
+        <path d="M20,20 C28,28 28,32 20,40 C12,32 12,28 20,20Z" fill="none" stroke="rgba(107,87,68,0.12)"
+          stroke-width="0.8" />
+        <path d="M40,20 C32,28 28,28 20,20 C28,12 32,12 40,20Z" fill="none" stroke="rgba(107,87,68,0.12)"
+          stroke-width="0.8" />
+      </pattern>
+    </defs>
+  </svg>
+
+  <!-- Scripts -->
+  <script src="js/unsplash.js?v=49"></script>
+  <script src="js/data.js?v=49"></script>
+  <script src="js/icons.js?v=49"></script>
+  <script src="js/components.js?v=49"></script>
+  <script src="js/screens/splash.js?v=49"></script>
+  <script src="js/screens/home.js?v=49"></script>
+  <script src="js/screens/cities.js?v=49"></script>
+  <script src="js/screens/city.js?v=49"></script>
+  <script src="js/screens/monument.js?v=49"></script>
+  <script src="js/screens/map.js?v=49"></script>
+  <script src="js/screens/favorites.js?v=49"></script>
+  <script src="js/router.js?v=49"></script>
+  <script src="js/app.js?v=49"></script>
+</body>
+
+</html>

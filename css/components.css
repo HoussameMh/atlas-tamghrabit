@@ -1,0 +1,1047 @@
+/* ═══════════════════════════════
+   ATLAS TAMGHRABIT — Components
+   ═══════════════════════════════ */
+
+/* ── Bottom Navigation Bar ── */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 430px;
+    height: calc(var(--nav-height) + var(--safe-bottom));
+    padding-bottom: var(--safe-bottom);
+    background: rgba(255, 250, 245, 0.95);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    z-index: var(--z-nav);
+    box-shadow: 0 -4px 24px rgba(26, 18, 8, 0.08);
+}
+
+.nav-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 10px 20px 6px;
+    flex: 1;
+    color: var(--color-text-muted);
+    transition: color var(--t-base), transform var(--t-fast);
+    position: relative;
+}
+
+.nav-tab:active {
+    transform: scale(0.92);
+}
+
+.nav-tab.active {
+    color: var(--city-active);
+}
+
+.nav-tab .nav-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.nav-tab span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.nav-tab.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 3px;
+    background: var(--city-active);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+/* ── Section Headers ── */
+.section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 var(--space-5);
+    margin-bottom: var(--space-4);
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.section-subtitle {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    font-family: var(--font-arabic);
+    letter-spacing: 0.5px;
+}
+
+.section-link {
+    font-size: var(--text-sm);
+    color: var(--city-active);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* ── MoorishCard ── */
+.moorish-card {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    background: var(--color-surface);
+    cursor: pointer;
+    transition: transform var(--t-base), box-shadow var(--t-base);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.moorish-card:active {
+    transform: scale(0.97);
+}
+
+.moorish-card:hover {
+    box-shadow: var(--shadow-moorish);
+}
+
+.moorish-card .card-img {
+    width: 100%;
+    object-fit: cover;
+    clip-path: url(#moorish-arch);
+}
+
+/* Moorish arch shape via CSS clip-path polygon */
+.arch-clip {
+    clip-path: polygon(0% 100%, 0% 35%, 5% 20%, 10% 10%, 20% 3%, 30% 0%, 50% 0%, 70% 0%, 80% 3%, 90% 10%, 95% 20%, 100% 35%, 100% 100%);
+}
+
+.moorish-card .card-body {
+    padding: var(--space-4);
+}
+
+.moorish-card .card-city-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    background: var(--city-active-light);
+    color: var(--city-active);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: var(--space-2);
+}
+
+.moorish-card .card-title {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-1);
+}
+
+.moorish-card .card-desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
+/* ── City Card ── */
+.city-card {
+    flex: 0 0 200px;
+    height: 270px;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--t-base), box-shadow var(--t-base);
+}
+
+.city-card:active {
+    transform: scale(0.96) translateY(2px);
+}
+
+.city-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--t-slow);
+}
+
+.city-card:hover .city-card-img {
+    transform: scale(1.06);
+}
+
+.city-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            transparent 30%,
+            rgba(var(--city-card-rgb, 226, 114, 91), 0.7) 80%,
+            rgba(var(--city-card-rgb, 226, 114, 91), 0.92) 100%);
+}
+
+.city-card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-4);
+    z-index: 2;
+    color: white;
+}
+
+.city-card-name {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.city-card-sub {
+    font-size: var(--text-xs);
+    opacity: 0.85;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.city-card-arabic {
+    font-family: var(--font-arabic);
+    font-size: var(--text-sm);
+    opacity: 0.75;
+    direction: rtl;
+}
+
+/* ── Hero Card ── */
+.hero-card {
+    margin: 0 var(--space-5);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    height: 220px;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+}
+
+.hero-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(26, 18, 8, 0.55) 0%, rgba(26, 18, 8, 0.2) 60%, transparent 100%);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.hero-card-label {
+    font-size: var(--text-xs);
+    color: var(--color-gold-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+}
+
+.hero-card-title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+}
+
+.hero-card-sub {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.75);
+    margin-top: var(--space-1);
+}
+
+/* ── Monument Card (Grid) ── */
+.monument-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    background: white;
+    cursor: pointer;
+    transition: transform var(--t-base), box-shadow var(--t-base);
+    -webkit-tap-highlight-color: transparent;
+    border: 1px solid var(--color-border);
+}
+
+.monument-card:active {
+    transform: scale(0.96);
+    box-shadow: var(--shadow-moorish);
+}
+
+.monument-card-img-wrap {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    position: relative;
+}
+
+.monument-card-img-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(transparent, rgba(var(--city-active-rgb), 0.25));
+}
+
+.monument-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--t-slow);
+}
+
+.monument-card:hover .monument-card-img {
+    transform: scale(1.06);
+}
+
+.monument-card-body {
+    padding: var(--space-3) var(--space-4);
+}
+
+.monument-card-name {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.monument-card-type {
+    font-size: var(--text-xs);
+    color: var(--city-active);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.monument-fav-btn {
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-3);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 250, 245, 0.9);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    z-index: 5;
+    transition: transform var(--t-spring);
+}
+
+.monument-fav-btn:active {
+    transform: scale(1.3);
+}
+
+.monument-fav-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.monument-fav-btn.active svg {
+    fill: #E2725B;
+    stroke: #E2725B;
+}
+
+/* ── Heritage / Artisanat Card ── */
+.artisanat-card {
+    flex: 0 0 170px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    background: white;
+    cursor: pointer;
+    transition: transform var(--t-base);
+    border: 1px solid var(--color-border);
+}
+
+.artisanat-card:active {
+    transform: scale(0.96);
+}
+
+.artisanat-card-img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.artisanat-card-body {
+    padding: var(--space-3);
+}
+
+.artisanat-card-title {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.artisanat-card-sub {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+/* ── Food Card (Gastronomie) ── */
+.food-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    background: white;
+    border: 1px solid var(--color-border);
+    transition: transform var(--t-base), box-shadow var(--t-base);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.food-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.food-card-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.food-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--t-slow);
+}
+
+.food-card:hover .food-card-img {
+    transform: scale(1.05);
+}
+
+.food-card-img-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.food-card-body {
+    padding: var(--space-4);
+}
+
+.food-card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    margin-bottom: var(--space-2);
+}
+
+.food-card-name {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+    line-height: 1.3;
+}
+
+.food-card-desc {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+}
+
+/* ── Pill Tabs ── */
+.pill-tabs {
+    display: flex;
+    gap: var(--space-2);
+    padding: 0 var(--space-5);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.pill-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.pill-tab {
+    flex: 0 0 auto;
+    padding: 8px 18px;
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    cursor: pointer;
+    border: 2px solid var(--color-border);
+    background: white;
+    color: var(--color-text-secondary);
+    transition: all var(--t-base);
+    white-space: nowrap;
+}
+
+.pill-tab.active {
+    background: var(--city-active);
+    border-color: var(--city-active);
+    color: white;
+    box-shadow: 0 4px 12px rgba(var(--city-active-rgb), 0.35);
+}
+
+/* ── Search Bar ── */
+.search-bar {
+    margin: 0 var(--space-5);
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 44px 12px 16px;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--color-border);
+    background: white;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--color-text-primary);
+    outline: none;
+    transition: border-color var(--t-base), box-shadow var(--t-base);
+    box-shadow: var(--shadow-sm);
+}
+
+.search-input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.search-input:focus {
+    border-color: var(--city-active);
+    box-shadow: 0 0 0 4px rgba(var(--city-active-rgb), 0.12);
+}
+
+.search-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    width: 20px;
+    height: 20px;
+}
+
+/* ── Page Header (City / Monument) ── */
+.page-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-overlay);
+    padding: calc(var(--safe-top) + 12px) var(--space-5) 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-header.transparent {
+    background: transparent;
+}
+
+.page-header.solid {
+    background: rgba(255, 250, 245, 0.9);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.back-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 250, 245, 0.9);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--t-fast), box-shadow var(--t-base);
+}
+
+.back-btn:active {
+    transform: scale(0.92);
+}
+
+.back-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.header-actions {
+    display: flex;
+    gap: var(--space-2);
+}
+
+/* ── City Hero ── */
+.city-hero {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.city-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.city-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            transparent 30%,
+            rgba(var(--city-active-rgb), 0.5) 70%,
+            rgba(var(--city-active-rgb), 0.85) 100%);
+}
+
+.city-hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-5) var(--space-5) var(--space-6);
+    color: white;
+}
+
+.city-hero-arabic {
+    font-family: var(--font-arabic);
+    font-size: var(--text-lg);
+    opacity: 0.85;
+    direction: rtl;
+    margin-bottom: var(--space-1);
+}
+
+.city-hero-name {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    margin-bottom: var(--space-1);
+}
+
+.city-hero-coords {
+    font-size: var(--text-xs);
+    opacity: 0.7;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* ── Monument Hero ── */
+.monument-hero {
+    width: 100%;
+    height: 380px;
+    position: relative;
+    overflow: hidden;
+}
+
+.monument-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.monument-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 40%, rgba(26, 18, 8, 0.8) 100%);
+}
+
+.monument-hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-5);
+    color: white;
+}
+
+.monument-hero-type {
+    font-size: var(--text-xs);
+    color: var(--color-gold-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+}
+
+.monument-hero-name {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.monument-hero-arabic {
+    font-family: var(--font-arabic);
+    font-size: var(--text-lg);
+    opacity: 0.8;
+    direction: rtl;
+    margin-top: var(--space-1);
+}
+
+/* ── Info Badge ── */
+.info-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    background: var(--city-active-light);
+    color: var(--city-active);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    border: 1px solid rgba(var(--city-active-rgb), 0.2);
+}
+
+/* ── Proximity Item ── */
+.proximity-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.proximity-item:last-child {
+    border-bottom: none;
+}
+
+.proximity-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: var(--city-active-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 20px;
+}
+
+.proximity-info {
+    flex: 1;
+}
+
+.proximity-name {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 2px;
+}
+
+.proximity-type {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.proximity-dist {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--city-active);
+}
+
+/* ── Photo Gallery ── */
+.photo-gallery {
+    display: flex;
+    gap: var(--space-3);
+    padding: 0 var(--space-5);
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.photo-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-thumb {
+    flex: 0 0 110px;
+    height: 80px;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color var(--t-base), transform var(--t-fast);
+}
+
+.gallery-thumb:active {
+    transform: scale(0.95);
+}
+
+.gallery-thumb.active {
+    border-color: var(--city-active);
+}
+
+/* ── Map Preview ── */
+.map-preview {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    height: 160px;
+    position: relative;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+}
+
+/* ── Bottom Sheet ── */
+.bottom-sheet-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 18, 8, 0.5);
+    z-index: calc(var(--z-modal) - 1);
+    opacity: 0;
+    animation: fadeIn var(--t-base) forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.bottom-sheet {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    width: 100%;
+    max-width: 430px;
+    background: var(--color-bg);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    z-index: var(--z-modal);
+    padding-bottom: calc(var(--nav-height) + var(--safe-bottom));
+    box-shadow: 0 -8px 40px rgba(26, 18, 8, 0.2);
+    animation: sheetSlideUp var(--t-spring) forwards;
+    max-height: 90dvh;
+    overflow-y: auto;
+}
+
+@keyframes sheetSlideUp {
+    to {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.sheet-handle {
+    width: 40px;
+    height: 4px;
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+    margin: 12px auto var(--space-4);
+}
+
+/* ── Zellige Pattern in Scroll ── */
+.zellige-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* ── Map Filter Pills ── */
+.map-filters {
+    position: absolute;
+    top: calc(var(--safe-top) + 60px);
+    left: 0;
+    right: 0;
+    z-index: var(--z-overlay);
+    display: flex;
+    gap: var(--space-2);
+    padding: 0 var(--space-4);
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.map-filters::-webkit-scrollbar {
+    display: none;
+}
+
+.map-filter-pill {
+    flex: 0 0 auto;
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 250, 245, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid var(--color-border);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--t-base);
+}
+
+.map-filter-pill.active {
+    background: var(--city-active);
+    border-color: var(--city-active);
+    color: white;
+}
+
+/* ── Toast notification ── */
+.toast {
+    position: fixed;
+    bottom: calc(var(--nav-height) + var(--safe-bottom) + 16px);
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--color-text-primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    z-index: var(--z-toast);
+    opacity: 0;
+    animation: toastIn 2.5s ease forwards;
+    white-space: nowrap;
+}
+
+@keyframes toastIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+
+    15% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    75% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+}
+
+/* ── Expandable text ── */
+.expandable-text {
+    position: relative;
+    overflow: hidden;
+    transition: max-height var(--t-base);
+}
+
+.expandable-text.collapsed {
+    max-height: 72px;
+}
+
+.expandable-text.expanded {
+    max-height: 1000px;
+}
+
+.expandable-text.collapsed::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 32px;
+    background: linear-gradient(transparent, var(--color-bg));
+}
+
+.expand-btn {
+    color: var(--city-active);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    padding: 4px 0;
+}
+
+/* ── Scrollable page content with nav offset ── */
+.page-scrollable {
+    padding-bottom: calc(var(--nav-height) + var(--safe-bottom) + 16px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 100dvh;
+}
+
+/* ── App Logo ── */
+.app-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.logo-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-gold) 0%, #A07C2F 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(201, 168, 76, 0.4);
+}
+
+.logo-mark svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+.logo-text {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+}
+
+.logo-text span {
+    color: var(--color-gold);
+}
+
+/* ── Animated Camel ── */
+.camel-track {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.city-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
